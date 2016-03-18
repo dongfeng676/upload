@@ -1,0 +1,16 @@
+<script src="<%= root_url %>vendor/uploadfile/js/jquery.uploadfile.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<%= root_url %>vendor/uploadfile/css/uploadfile.css"></link>
+<h1>文件上传</h1>
+<div id="fileuploader">Upload</div>
+<script>
+  $("#fileuploader").uploadFile({
+      url:"<%=upload_path()%>",
+      acceptFileTypes: /(\.|\/)(log|zip|tar.gz)$/i,
+      start: function(e,data){
+        alert("start")
+      },
+      stop:function(e,data){
+        alert("stop")
+      }
+  });
+</script>
